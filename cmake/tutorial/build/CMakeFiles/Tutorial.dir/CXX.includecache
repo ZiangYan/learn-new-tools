@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../MathFunctions/MathFunctions.h
+mysqrt.h
+../MathFunctions/mysqrt.h
+
+../MathFunctions/mysqrt.h
+stdio.h
+-
+
+/home/yza/learn/cmake/tutorial/tutorial.cxx
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+TutorialConfig.h
+/home/yza/learn/cmake/tutorial/TutorialConfig.h
+MathFunctions.h
+/home/yza/learn/cmake/tutorial/MathFunctions.h
+
+TutorialConfig.h
+
