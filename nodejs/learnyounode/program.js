@@ -1,10 +1,8 @@
-var fs = require('fs');
 var path = require('path');
+var http = require('http');
 
-fs.readdir(process.argv[2], function (err, list) {
-    list.forEach(function (file) {
-        if (path.extname(file).substring(1) === process.argv[3]) {
-            console.log(file);
-        }
-    });
+http.get(process.argv[2], function (response) {
+    response.setEncoding('utf8');
+    response.on("data", console.log);
 });
+
