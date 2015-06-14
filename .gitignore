@@ -1,2 +1,6 @@
+# VIM swap file
+.swp
+
 # nodejs program
 nodejs/node-v0.12.4/
+
