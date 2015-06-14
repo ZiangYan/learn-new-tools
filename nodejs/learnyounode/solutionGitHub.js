@@ -30,5 +30,5 @@ var server = http.createServer(function (req, res) {
     res.writeHead(404)
     res.end()
   }
-});
-server.listen(Number(process.argv[2])); 
+})
+server.listen(Number(process.argv[2]))
