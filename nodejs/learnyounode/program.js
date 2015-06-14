@@ -1,27 +1,12 @@
-var path = require('path');
 var http = require('http');
-var bl = require('bl');
-var results = [];
-var count = 0;
+var map = require('through2-map');
 
-function printResult() {
-    for(var i = 0; i < 3; ++i){
-        console.log(results[i]);
-    }
-}
+var server = http.createServer(function (req, res) {
+    if (req.method != 'POST')
+        return res.end('send me a POST\n');
+    req.pipe(map(function (chunk) {
+        return chunk.toString().toUpperCase();
+    })).pipe(res);
+});
 
-function httpGet(index) {
-    http.get(process.argv[2 + index], function (response) {
-        response.pipe(bl(function (err, data) {
-            if (err)
-                return console.error(err);
-            results[index] = data.toString();
-            count++;
-            if (count == 3)
-                printResult();
-        }));
-    });
-}
-
-for (var i = 0; i < 3; ++i)
-    httpGet(i); 
+server.listen(process.argv[2]);
