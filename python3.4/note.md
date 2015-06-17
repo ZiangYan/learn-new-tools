@@ -57,5 +57,20 @@ matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
 matrix_transposed = map(list, zip(\*matrix))
 
 
-## 
+## numpy
+* fromfunction(f, size, dtype=float)，生成一个(x,y)位置为f(x,y)的array
+* a[::-1]翻转向量
+× a[0:3, 0:3]取a的前2行前2列
+* 当没有指定所有维度时，为指定维度认为是整个维度都取：二维a[-1]=a[-1,:]
+× 可以用...代指剩余各维度:
+  * x[1,2,...] is equivalent to x[1,2,:,:,:],
+  * x[...,3] to x[:,:,:,:,3] and
+  * x[4,...,5,:] to x[4,:,:,5,:].
+* a.flat可以展开矩阵a
+× a.resize直接改变a，a.reshape和a.transpose不改变a，而是返回一个拷贝。a.reshape(3, -1)代表把a的第一维长度改为3，第2维长度自行计算。
+* newaxis用来增加维数。a=array([0, 1]),a[:,newaxis]将把a变为array([[0], [1]])
+* ones/zeros/random.random/vstack/hstack接受tuple输入，vstack((a, b))和hstack((a, b))
+* 可以用id(a)来查看a的位置
+* 一个对象的view是浅拷贝，实际上指向同一个东西，改变view的值会同时改变原变量的数值（但可以改变view的shape而不改变原变量的shape）。用a.copy()创建的是深拷贝，二者互不影响。可以通过a.flags.owndata来查看某个变量是否拥有自己的内存，浅拷贝的view该值为False，深拷贝的变量该值为True。
 
+* 
