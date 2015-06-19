@@ -1,5 +1,5 @@
 # VIM swap file
-.swp
+*.swp
 
 # nodejs program
 nodejs/node-v0.12.4/
