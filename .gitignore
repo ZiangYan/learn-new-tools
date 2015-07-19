@@ -4,3 +4,5 @@
 # nodejs program
 nodejs/node-v0.12.4/
 
+# cmake build
+build/

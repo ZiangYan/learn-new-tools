@@ -1,5 +1,0 @@
-# OPTION( VARIABLE "Description" Initial state)
-OPTION( WITH_FOO "Enable FOO support" ON )
-OPTION( WITH_BAR "Enable BAR component" ON )
-SET( BAZ 18 )
-CONFIGURE_FILE( ${CMAKE_SOURCE_DIR}/include/config.h.cmake ${CMAKE_SOURCE_DIR}/include/config.h )

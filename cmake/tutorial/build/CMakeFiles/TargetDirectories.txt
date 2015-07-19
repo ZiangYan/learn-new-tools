@@ -1,2 +1,0 @@
-/home/yza/learn/cmake/tutorial/build/MathFunctions/CMakeFiles/MathFunctions.dir
-/home/yza/learn/cmake/tutorial/build/CMakeFiles/Tutorial.dir
