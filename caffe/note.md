@@ -28,6 +28,8 @@ cmake正确后，就可以进行编译：
 
 -j后面的数字代表并行编译的核数目，建议设置为你的CPU实际并行核数目-1。CPU并行核数目可在terminal中用nproc查看。
 
+编译完成后，可以在```PATH```环境变量中添加```$CAFFE_ROOT/build/tools```以便使用命令行接口。此外，如果要使用Python接口，还需在环境变量```PYTHONPATH```中加入```$CAFFE_ROOT/python```。
+
 ### Python接口
 在用cmake配置安装过程时，如果python的包不够全会发生不自动编译pycaffe模块的现象，但并不会有任何提示。这样，在import caffe时会发生no module named \_caffe的错误。解决方法是在CAFFE\_ROOT下sudo pip install -r ./python/requirements.txt，然后再sudo apt-get install libboost-python-dev，然后删掉build文件夹，重新cmake，重新make。 
 
