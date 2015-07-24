@@ -6,3 +6,6 @@ nodejs/node-v0.12.4/
 
 # cmake build
 build/
+
+# OS X 
+.DX_Store
