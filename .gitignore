@@ -8,4 +8,4 @@ nodejs/node-v0.12.4/
 build/
 
 # OS X 
-.DX_Store
+.DS_Store
