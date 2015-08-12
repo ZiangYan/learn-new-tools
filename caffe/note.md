@@ -1,7 +1,7 @@
 ## 安装
 用下列命令可快速安装除CUDA/cnDNN以外**所有**依赖库：
 
-    sudo apt-get install libatlas-dev libatlas-base-dev libboost-dev libboost-all-dev libboost-system-dev libboost-thread-dev libboost-python-dev libopencv-dev libprotobuf-dev protobuf-compiler libhdf5-dev libleveldb-dev liblmdb-dev libsnappy-dev libpython-dev libpython2.7 automake cmake python-pip
+    sudo apt-get install libatlas-dev libatlas-base-dev libboost-dev libboost-all-dev libboost-system-dev libboost-thread-dev libboost-python-dev libopencv-dev libprotobuf-dev protobuf-compiler libhdf5-dev libleveldb-dev liblmdb-dev libsnappy-dev libpython-dev libpython2.7 automake cmake python-pip python-dev
     export CAFFE_ROOT=/path/to/your/caffe
     sudo pip install -r $CAFFE_ROOT/python/requirements.txt
 
