@@ -4,10 +4,13 @@ cmake_minimum_required(VERSION 2.8)
 project(Demo1)
 
 # 可选项
-option(USE_MYMATH "Use my math implemention" OFF)
+option(USE_MYMATH "Use my math implementation" ON)
 if(USE_MYMATH)
+    message("Use my math implementation")
     add_subdirectory(math)
     set(EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
+else()
+    message("Use system provided math implementation")
 endif(USE_MYMATH)
 
 configure_file(
