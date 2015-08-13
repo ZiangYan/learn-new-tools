@@ -43,4 +43,8 @@ cmake正确后，就可以进行编译：
 然后重新make即可。
 
 
+# loss很大的可能原因
+
+* ```base_lr```设置过大
+* 不恰当的```scale```也将导致学习速率过大.需要注意的是,采用```ImageDataLayer```时,要注意```transform_param```和```image_data_param```中要**同时**设置```scale```的值.**仅在```image_data_param```或者```transform_param```中设置是无效的.**这可能是caffe的一个bug.
 
