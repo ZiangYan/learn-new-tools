@@ -144,6 +144,13 @@ nodejs/node-v0.12.4/
 
 # cmake build
 build/
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+CMakeLists.txt.user
 
 # OS X 
 .DS_Store
