@@ -1,0 +1,6 @@
+#!/bin/sh
+# fanqiang tools based on shadowsocks
+# author: yanziang
+# date: 2015.9.14
+
+nohup sslocal -s 192.241.199.109 -p 9048 -k ssast -m rc4-md5 >/tmp/sslocal.log 2>&1 &
