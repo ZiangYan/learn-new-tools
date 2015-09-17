@@ -25,6 +25,10 @@ fanqiang is a shadowsocks-based command line tool, thanks for software school fo
    
         tail -f /tmp/sslocal.log
    
-   
+
+## note
+Google Scholar may refuse your visit sometimes if you use accounts provided by software school. However, we can access Google Scholar directly inside campus. Just add rule in SwitchyOmega to exclude proxy when visiting scholar.google.com.
+
+
 # backup
 Backup for goagent and shadowsocks are necessary due to well-known reason. All those backups are under ```backup/``` folder.
