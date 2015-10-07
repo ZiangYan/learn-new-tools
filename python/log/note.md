@@ -20,4 +20,6 @@
         log.init()
         log.debug('This is a debug message')
         
-在这些log等级中,debug是最低的,log模块默认从INFO开始显示.因此在发行版中,只要把verbosity设为INFO,就不会显示debug信息,防止刷屏
+* 在这些log等级中,debug是最低的,log模块默认从INFO开始显示.因此在发行版中,只要把verbosity设为INFO,就不会显示debug信息,防止刷屏.
+
+* gflags的FLAGS是全局变量,改变其值后,在glog模块读取gflags.FLAGS变量将读到改变后的新值.
