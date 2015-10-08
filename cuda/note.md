@@ -32,6 +32,15 @@ GPU的内存分三级:global/shared/local.所有block中所有thread都能访问
 
 在kernel函数中,用```__shared__```指定shared memory.
 
+# 基本并行算法
+## scan
+* Steele scan: work nlog(n), step log(n)
+* Blelloch scan: work n, step 2log(n)
+当GPU work 效率高,选Steele, 当GPU step效率高,选Blelloch.
+
+
+
+
 # 坑
 ## 图片x轴与y轴
 OpenCV读入的图片按照H*W*C,按行优先顺序存储.假如一张灰度图宽500,高300,我们设定block和grid都是二维,每个block中有16*16个thread.那么,水平方向需要32个block,竖直方向需要19个block.在每个thread中,我们在开头应当加入类似如下代码来获取在图片中的位置:
