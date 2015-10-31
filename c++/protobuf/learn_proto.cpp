@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
   //   }
   // }
   {
-      bool success = ReadProtoFromTextFile(argv[1], &address_book);
+      bool success = ReadProtoFromTextFile(argv[1], address_book.add_person());
       if (!success) {
           std::cout << "Parse from " << argv[1] << " error" << std::endl;
           return -1;
