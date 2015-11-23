@@ -18,7 +18,7 @@ fanqiang is a shadowsocks-based command line tool, thanks for software school fo
 
         ./fanqiang
 
-4. Install SwitchyOmega extension in your Chrome browser, resotre filter lists from ```backup/goagent/local/SwitchyOptions.bak```. Set agency protocol to SOCKS5, port to 1080, mode to auto switch in SwitchyOmega option page.
+4. Install SwitchyOmega extension in your Chrome browser, resotre filter lists from ```./OmegaOptions.bak```. Set agency protocol to SOCKS5, port to 1080, mode to auto switch in SwitchyOmega option page.
 
 4. Restart your Chrome and now you should be able to explore everywhere in the world. You may want to view the log to check whether the sslocal are working correctly:
 
@@ -32,3 +32,6 @@ Google Scholar may refuse your visit sometimes if you use accounts provided by s
 
 # backup
 Backup for goagent and shadowsocks are necessary due to well-known reason. All those backups are under ```backup/``` folder.
+
+# OmegaOptions.bak
+Configuration backup file for SwitchyOmega extension in Chrome. This configuration will listen to 127.0.0.1:1080 for proxy, which is default port for sslocal. This configuration also automatically update gfw list.

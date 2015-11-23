@@ -133,7 +133,6 @@ sympy-plots-for-*.tex/
 *.xdy
 
 # WinEdt
-*.bak
 *.sav
 
 # VIM
