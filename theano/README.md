@@ -1,4 +1,5 @@
 ﻿# theano学习笔记
+本笔记是学习[theano官网教程](http://deeplearning.net/software/theano/tutorial/)所记录。
 ## 数据类型
 |theano中名称|常用名称|
 |:---------:|:-----:|
@@ -21,5 +22,4 @@
 
     (x + y)
     
-## 
-
+## shared variable

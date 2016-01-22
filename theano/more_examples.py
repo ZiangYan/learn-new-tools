@@ -1,9 +1,24 @@
+#!/usr/bin/env python
 import numpy
 import theano
-import theano.tensor as T
+from theano import tensor as T
+from theano import Param
+from theano import function
+from theano import shared
 rng = numpy.random
 __author__ = 'yanziang'
 
+
+# default value for parameter of function
+x, y = T.dscalars('x', 'y')
+z = x + y
+f = function([x, Param(y, default=1.)], z)
+print f(33.0)
+print f(33.0, 2.0)
+
+
+# logistic regression
+print 'logistic regression'
 N = 400
 feats = 784
 D = (rng.randn(N, feats), rng.randint(size=N, low=0, high=2))
