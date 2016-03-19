@@ -170,6 +170,12 @@ def get_next_minibatch_index(num_example, old_index, batchsize):
 # easier to read.
 
 def main():
+    # Solver Settings
+    weight_decay = 0.0005
+    batch_size = 64
+    num_iteration = 10000
+    display = 100
+    test_iter = 100  # for each test, average loss and accuracy in test_iter batches
     # Load the dataset
     print("Loading data...")
     X_train, y_train, X_val, y_val, X_test, y_test = load_dataset()
@@ -186,7 +192,8 @@ def main():
     # to minimize (for our multi-class problem, it is the cross-entropy loss):
     prediction = lasagne.layers.get_output(network)
     loss = lasagne.objectives.categorical_crossentropy(prediction, target_var)
-    loss = loss.mean()
+    l2 = lasagne.regularization.regularize_network_params(network, lasagne.regularization.l2) * weight_decay
+    loss = loss.mean() + l2
     # We could add some weight decay as well here, see lasagne.regularization.
 
     # Create update expressions for training, i.e., how to modify the
@@ -202,7 +209,7 @@ def main():
     test_prediction = lasagne.layers.get_output(network, deterministic=True)
     test_loss = lasagne.objectives.categorical_crossentropy(test_prediction,
                                                             target_var)
-    test_loss = test_loss.mean()
+    test_loss = test_loss.mean() + l2
     # As a bonus, also create an expression for the classification accuracy:
     test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), target_var),
                       dtype=theano.config.floatX)
@@ -216,19 +223,22 @@ def main():
 
     # Finally, launch the training loop.
     print("Starting training...")
-    batch_size = 64
-    num_iteration = 10000
     train_batch_index = range(batch_size)
     valid_batch_index = range(batch_size)
 
     for iter_index in range(num_iteration):
         start_time = time.time()
         train_loss = train_fn(X_train[train_batch_index], y_train[train_batch_index])
-        valid_loss, valid_accuracy = val_fn(X_val[valid_batch_index], y_val[valid_batch_index])
         train_batch_index = get_next_minibatch_index(len(X_train), train_batch_index, batch_size)
-        valid_batch_index = get_next_minibatch_index(len(X_val), valid_batch_index, batch_size)
-
-        if iter_index % 100 == 0:
+        if iter_index % display == 0:
+            valid_loss, valid_accuracy = 0., 0.
+            for _ in range(test_iter):
+                valid_loss_iter, valid_accuracy_iter = val_fn(X_val[valid_batch_index], y_val[valid_batch_index])
+                valid_loss += valid_loss_iter
+                valid_accuracy += valid_accuracy_iter
+                valid_batch_index = get_next_minibatch_index(len(X_val), valid_batch_index, batch_size)
+            valid_loss /= test_iter
+            valid_accuracy /= test_iter
             print('iteration %d took %fs' % (iter_index, time.time() - start_time))
             print('training   loss:\t\t%f' % train_loss)
             print('validation loss:\t\t%f' % valid_loss)
