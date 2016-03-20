@@ -42,7 +42,6 @@ def load_dataset():
 
     # We then define functions for loading MNIST images and labels.
     # For convenience, they also download the requested files if needed.
-    import gzip
 
     def load_mnist_images(filename):
         filename = os.path.join('/home/yanziang/tools/caffe/data/mnist', filename)
@@ -168,6 +167,7 @@ def get_next_minibatch_index(num_example, old_index, batchsize):
 # Everything else will be handled in our main program now. We could pull out
 # more functions to better separate the code, but it wouldn't make it any
 # easier to read.
+
 
 def main():
     # Solver Settings
