@@ -22,4 +22,5 @@
 
     (x + y)
     
-## shared variable
+## 调试经验
+* 用```THEANO_FLAGS=mode=FAST_COMPILE ./run.py```可以使theano基本只用python的实现而不编译，可以在调试时快速测试模型对不对。等到模型调试正确了，运行时再改回```THEANO_FLAGS=mode=FAST_RUN ./run.py```即可
