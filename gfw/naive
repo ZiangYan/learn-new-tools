@@ -2,10 +2,10 @@
 # fanqiang tools based on shadowsocks
 # author: yanziang
 # create date: 2015.9.14
-# last modified: 2015.9.23
+# last modified: 2016.5.2
 
 # provided by software school, Tsinghua Univ. Google Scholar sometimes failed to connect
-# nohup sslocal -s 192.241.199.109 -p 9048 -k ssast -m rc4-md5 >/tmp/sslocal.log 2>&1 &
+# nohup sslocal -s 192.241.199.109 -p 9048 -k ssast -m rc4-md5 >/tmp/fanqiang.log 2>&1 &
 
-# Fengye VPN bought by ziang. XXXX is port number, YYYY is password, please contact yza15@mails.tsinghua.edu.cn to get.
-nohup sslocal -s cn1t.hxg.cc -p XXXX -k YYYY -m rc4-md5 >/tmp/chenhuang.log 2>&1 &
+# Fengye VPN account owned by ziang. XXXX is port number, YYYY is password, please contact yza15@mails.tsinghua.edu.cn to get.
+nohup sslocal -s cn1t.hxg.cc -p XXXX -k YYYY -m rc4-md5 >/tmp/fanqiang.log 2>&1 &
