@@ -3,12 +3,12 @@
 SESSION_NAME="monitor_"$(date +'%Y-%m-%d-%H-%M-%S')
 tmux new-session -d -s ${SESSION_NAME}
 tmux split-window -d -t 0 -v
-tmux split-window -d -t 0 -v
+#tmux split-window -d -t 0 -v
 tmux send-keys -t 0 'nvidia-smi -l 1' enter
 tmux send-keys -t 1 'top -d 1' enter
 tmux select-pane -t 0
 tmux resize-pane -D 10
-tmux select-pane -t 1
-tmux resize-pane -D 15
-tmux send-keys -t 2 'iostat -x -m 1' enter
+#tmux select-pane -t 1
+#tmux resize-pane -D 15
+#tmux send-keys -t 2 'iostat -x -m 1' enter
 tmux attach
