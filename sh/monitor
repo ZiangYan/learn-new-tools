@@ -1,13 +1,12 @@
-#!/usr/bin/tmux source-file
+#!/bin/bash
 
-new-session -d
-split-window -d -t 0 -v
-split-window -d -t 0 -h
-
-send-keys -t 0 'nvidia-smi -l 1' enter
-send-keys -t 1 'top -d 1' enter
-select-pane -t 2
-resize-pane -D 10
-send-keys -t 2 'iostat -x -m 1' enter
-
-attach
+SESSION_NAME="monitor_"$(date +'%Y-%m-%d-%H-%M-%S')
+tmux new-session -d -s ${SESSION_NAME}
+tmux split-window -d -t 0 -v
+tmux split-window -d -t 0 -h
+tmux send-keys -t 0 'nvidia-smi -l 1' enter
+tmux send-keys -t 1 'top -d 1' enter
+tmux select-pane -t 2
+tmux resize-pane -D 10
+tmux send-keys -t 2 'iostat -x -m 1' enter
+tmux attach
