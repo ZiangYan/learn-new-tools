@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#coding=utf-8
 import commands
 import os
 
@@ -12,12 +13,11 @@ for line in output:
         new_line = line.replace('  ', ' ')
     #print line
     name, pts = line.split(' ')[:2]
-    msg = 'Broadcast message from zcs@FIT3-117\n\
-            (/dev/pts/2) at 10:30 ...\n\
-                                 \n\
-%s, you have made good work, keep doing well and I\'ll buy you a NIPS candy!' % name
-    print msg
-    shell_cmd = 'echo "%s" > /dev/%s' % (msg, pts)
-    print shell_cmd + '\n'
-    os.system(shell_cmd)
+    if name == 'yanziang' or name == 'liuhu':
+        shell_cmd = 'sudo ttyecho -n /dev/%s "/usr/games/sl"' % pts
+        os.system(shell_cmd)
+        date = commands.getoutput("date +'%H:%M'")
+        msg = '三点多了，大家起来休息一下 (%s) --by kalen wu' % date
+        shell_cmd = 'echo "%s" > /dev/%s' % (msg, pts)
+        os.system(shell_cmd)
 
