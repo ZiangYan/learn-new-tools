@@ -1,0 +1,13 @@
+#!/usr/bin/tmux source-file
+
+new-session -d
+split-window -d -t 0 -v
+split-window -d -t 0 -h
+
+send-keys -t 0 'nvidia-smi -l 1' enter
+send-keys -t 1 'top -d 1' enter
+select-pane -t 2
+resize-pane -D 10
+send-keys -t 2 'iostat -x -m 1' enter
+
+attach
