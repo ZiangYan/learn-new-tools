@@ -1,6 +1,10 @@
 ﻿# 简介
 越过长城，走向世界！
 
+# 2016.6.26 更新
+为女朋友开发了一个新版的工具，可以自动检测服务器是否稳定，不稳定自动重新连接，地址是[snbbgoogle](http://bee:8888/yanziang/snbbgoogle)。本教程仍可以使用，但推荐使用新版工具。
+
+
 # naive
 `naive`是一个基于shadowsocks的*nix命令行工具，用于一键翻墙。`naive`是一个shadowsocks客户端，用shadowsocks账号和密码访问了运行shadowsocks的服务器。建立和shadowsocks服务器的连接后，在本地开启翻墙服务器，其他的应用（例如浏览器）便可以通过访问本地的翻墙服务器来和shadowsocks服务器通讯。需要注意的是，shadowsocks服务器通常是付费的，我们通过购买该服务器的账号和密码来访问该服务器。我通常到[枫叶主机](http://www.fyvps.com)购买账号密码，2016年5月时，其高级套餐可以给10人用，每季度60元。Bigeye内部人员可以找我免费共享～
 
