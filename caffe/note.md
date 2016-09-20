@@ -1,7 +1,7 @@
 ﻿## 安装
 用下列命令可快速安装除CUDA/cnDNN以外**所有**依赖库：
 
-    sudo apt-get install libatlas-dev libatlas-base-dev libboost-dev libboost-all-dev libboost-system-dev libboost-thread-dev libboost-python-dev libopencv-dev libprotobuf-dev protobuf-compiler libhdf5-dev libleveldb-dev liblmdb-dev libsnappy-dev libpython-dev libpython2.7 automake cmake python-pip python-dev libgflags-dev libgoogle-glog-dev gfortran
+    sudo apt-get install libatlas-dev libatlas-base-dev libboost-dev libboost-all-dev libboost-system-dev libboost-thread-dev libboost-python-dev libopencv-dev libprotobuf-dev protobuf-compiler libhdf5-dev libleveldb-dev liblmdb-dev libsnappy-dev libpython-dev libpython2.7 automake cmake python-pip python-dev libgflags-dev libgoogle-glog-dev gfortran cython3
     export CAFFE_ROOT=/path/to/your/caffe
 
 由于pip设计不甚完善，在同时安装互相依赖的多个python包时处理不好，所以建议裸机在装python包时采用先安装依赖浅的包，再安装依赖深的包：
